@@ -1,0 +1,24 @@
+*{
+    width: 100%;
+    position: relative;
+}
+
+.type{
+    width: 200px;
+    height: 200px;
+    background: #EFEFF2;
+    border-radius: 50px;
+    border-color: #EFEFF2;
+    display: flexbox;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+}
+#water {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg/2048px-Pok%C3%A9mon_Water_Type_Icon.svg.png");
+    background-size:cover;
+}
+#fire {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg/768px-Pok%C3%A9mon_Fire_Type_Icon.svg.png");
+    background-size:cover;
+}

@@ -1,22 +1,44 @@
-export const filterByType = function (data, type) {
+//Filter by type
+export const filterByType = (data, type) => {
   const arrPokeType = data.filter((pokemon) => {
-    if (pokemon.type <= type) {
+    if (pokemon.type.includes(type)) {
       return true;
     } else {
       return false;
     }
   })
   return arrPokeType;
-}
-console.log("filter", filterByType(pokemon, grass));
-
-export const filterByName = function (data, name) {
-  const arrPokeName = data.filter((pokemon) => {
-    if (pokemon.name <= name) {
+};
+//Filter by egg
+export const filterByEgg = (data, egg) => {
+  const arrPokeEgg = data.filter((pokemon) => {
+    if (pokemon.egg.includes(egg)) {
       return true;
     } else {
       return false;
     }
   })
-  return arrPokeName;
+  return arrPokeEgg;
+};
+//Filter by generation
+export const filterByGeneration = (data, generation) => {
+  const arrPokeGeneration = data.filter((pokemon) => {
+    if (pokemon.generation.num == generation) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return arrPokeGeneration;
+};
+//Filter by region
+export const filterByRegion = (data, generation) => {
+  const arrPokeRegion = data.filter((pokemon) => {
+    if (pokemon.generation.name == generation) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return arrPokeRegion;
 };
