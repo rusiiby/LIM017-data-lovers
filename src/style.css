@@ -1,24 +1,415 @@
-*{
+html{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.home {
+    background-color: rgba(17,17,17,0.75);
     width: 100%;
+    min-width: 1400px;
     position: relative;
 }
-
-.type{
+.header{
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    min-width: 1280px;
+    height: 66px;
+    background-color: rgba(17,17,17,0.75);
+    box-shadow: 0 3px 7px 0 rgb(0 0 0 / 35%);
+}
+.header_logo{
+    float: left;
+    margin-left: 8px;
+    width: 317px;
+    height: 105px;
+}
+.header_logo img{
+    margin-left: 66px;
+    height: 60px;
+}
+.header_options{
+    display: inline-block;
+    position: relative;
+    margin-left: -125px;
+}
+.options_list{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10px;
+    margin-left: 40px;
+}
+.options_list .options{
+    font-size: 14px;
+    margin: 0 15px;
+}
+.options:hover{
+    text-shadow: 0 0 10px #FFC300, 0 0 20px #FFC300, 0 0 40px #FFC300;
+    color: #fff;
+}
+.options{
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: auto;
+    height: 66px;
+    margin: 0 20px;
+    line-height: 66px;
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    color: #ccc;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+.options_more::after {
+    content: '';
+    display: block;
+    border-top: 5px solid #ccc;
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    margin-left: 9px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.options_sublist {
+    position: absolute;
+    top: 66px;
+    left: -20px;
+    background: #272626;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    border-radius: 1px;
+    pointer-events: none;
+}
+.options_sublist li {
+    width: 214px;
+    height: 63px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.options_sublist li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    text-shadow: none;
+}
+a {
+    text-decoration: none;
+}
+.official_page {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 200px;
-    height: 200px;
-    background: #EFEFF2;
-    border-radius: 50px;
-    border-color: #EFEFF2;
-    display: flexbox;
+    height: 66px;
+}
+.transition-img {
+    width: 100%;
+    height: 100%;
+    background: center/cover no-repeat;
+}
+.home .main_page {
+    position: relative;
+    width: 1400px;
+    margin: 0;
+    border: 0;
+    top: 0;
+}
+.home .main_page .background{
+    display: flex;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fcf9fe;
+}
+.home .main_page .background img{
+  width: 1400px;
+}
+.home .main_page_search {
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    width: 960px;
+    min-height: 280px;
+    transform: translate(-50%, -340px);
+    background-image: url(https://pngimg.com/uploads/pokeball/pokeball_PNG8.png);
+    background-size: 280px;
+    background-position:top;
+    background-repeat: no-repeat;
+}
+.home .main_page_search img{
+  z-index: 7;
+  width: 400px;
+}
+.home .main_page_sign {
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    width: 100%;
+    min-height: 280px;
+    transform: translate(-50%, -340px);
+}
+.home .main_page_sub {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(114 71 21 / 68%), 0 0 10px rgb(114 71 21 / 68%);
+    margin: 110px auto 27px;
+}
+.home .main_page_download {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+.home .main_page_download>li {
+    flex-shrink: 0;
+    width: 188px;
+    height: 62px;
+    margin-right: 15px;
+    opacity: 0.8;
+    list-style-type:none;
+}
+.home .main_page_download>li:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+.home .logo_company {
+    position: absolute;
+    z-index: 9;
+    left: 10px;
+    bottom: 10px;
+    width: 250px;
+}
+#PokeType{
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
+    position:relative;
+    width: 1400px;
+    height: 2250px;
+    top:-38px;
+    position:relative;
+    background-image: url(https://wallpaperaccess.com/full/7941326.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-#water {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg/2048px-Pok%C3%A9mon_Water_Type_Icon.svg.png");
-    background-size:cover;
+.typebtn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin:40px;
+    width: 1280px;
+    height: 2250px;
 }
-#fire {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg/768px-Pok%C3%A9mon_Fire_Type_Icon.svg.png");
-    background-size:cover;
+.typebtn>li {
+    margin: 60px;
+    opacity: 0.8;
+    list-style-type:none;
+}
+.typebtn>li:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+.type img{
+  height: 200px;
+  width: 200px;
+}
+#PokeEgg{
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position:relative;
+    width: 1400px;
+}
+.eggbtn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.eggbtn>li {
+    margin: 100px;
+    opacity: 0.8;
+    list-style-type:none;
+}
+.eggbtn>li:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.egg img{
+  height: 190px;
+  width: 160px;
+}
+#PokeRegion{
+    width: 1400px;
+    height: 780px;
+    z-index: 2;
+    top:-38px;
+    position:relative;
+}
+.regionList{
+    overflow: hidden;
+    margin:0;
+    width: 1400px;
+    height: 780px;
+}
+.regionList-item{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: center no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: 1920px 260px;
+}
+.regionList-item::before{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.regionList-item p::after{
+    position: absolute;
+    bottom: 91px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    content: '';
+    width: 210px;
+    height: 10px;
+    background: url() center no-repeat;
+    background-size: 210px 10px;
+    opacity: 0;
+}
+.regionList-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat;
+  background-size: 1380px 720px;
+  transition: transform 0.4s 0s ease-out;
+}
+.regionList-item-soon{
+    background-image: url(https://genshin.hoyoverse.com/_nuxt/img/9a62be8.jpg);
+}
+.regionList-item-disable{
+    pointer-events: none;
+    list-style-type:none;
+}
+.regionList .regionList-item p, .regionList-item a{
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+    font-size: 36px;
+    color: #fff;
+    line-height: 260px;
+    width: 100%;
+    height: 330px;
+    background: url("https://www.creativefabrica.com/wp-content/uploads/2021/06/08/text-decoration-elements-Graphics-13110071-3-580x399.png") center no-repeat;
+    background-size: 132px;
+    text-align: center;
+    text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    margin: 0;
+    overflow: hidden;
+}
+.regionList-item:hover p::after, .regionList-item:hover a::after{
+    opacity: 1;
+}
+.regionList-item .regionList-char{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: calc(50% + 360px) 50%;
+    background-size: 450px 260px;
+    opacity: 0;
+    transition: all 0.2s 0s ease-in;
+    border: #fff solid 6px;
+    box-sizing: border-box;
+}
+.regionList-item:hover::before{
+    background: rgba(0,0,0,0.2);
+}
+.regionList-item:hover .regionList-char{
+    opacity: 1;
+}
+.regionList-item:hover .regionList-bg{
+    transform: scale(1.05);
+}
+ul, li {
+    list-style: none;
+}
+#rkanto{
+  background-image: url("https://pbs.twimg.com/media/ETVLfIhWkAA_iLE.jpg");
+}
+#rkantouno{
+  background-image:url("https://www.seekpng.com/png/full/99-992206_beststarters-pokemon-gen-1-starters.png")
+}
+#rjohto{
+  background-image:url("https://media.gq.com.mx/photos/61d9c669ed3f3306292cf647/16:9/w_2560%2Cc_limit/Poke%25CC%2581mon%2520Legends-%2520Arceus.jpg")
+}
+#rjohtouno{
+  background-image: url("https://www.seekpng.com/png/full/990-9909130_generation-ii-starters-pokemon-gen-two-starters.png");
 }

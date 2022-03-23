@@ -42,3 +42,8 @@ export const filterByRegion = (data, generation) => {
   })
   return arrPokeRegion;
 };
+//Search by name
+export const search = (data, name) => {
+  const searchPoke = data.find(element => element.name.toLowerCase() === name.toLowerCase());
+  return searchPoke;
+}
