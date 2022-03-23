@@ -6,7 +6,117 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+  <!-- Home -->
+  <div class="home">
+    <div class="header">
+      <div class="header_logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pokémon_GO_logo.svg/1200px-Pokémon_GO_logo.svg.png" alt="logo">
+      </div>
+      <div class="header_options">
+        <div class="options_list">
+          <a href="" aria-current="page" class="options">See all</a>
+          <a href="" id="btype" class="options">By type</a>
+          <a href="" class="options">By egg</a>
+          <a href="" class="options">By region</a>
+          <div class="options options_more">
+            <p>By generation</p>
+            <ul class="options_sublist">
+              <li> <a href="" class="more_options" id="generation i">Generation I</a> </li>
+              <li> <a href="" class="more_options" id="generation ii">Generation II</a> </li>
+              <li> <a class="more_options">Coming soon</a> </li>
+            </ul>
+          </div>
+          <div class="options options_more">
+            <p>More</p>
+            <ul class="options_sublist">
+              <li> <a target="" class="more_options">Best stats</a> </li>
+              <li> <a target="" class="more_options">Compare Pokemon</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="https://pokemongolive.com/es/" class="official_page">
+        <div class="transition-img" style="background-image: url(https://i.ibb.co/M6hKjjv/Group-101-1.png);">
+        </div>
+      </a>
+    </div>
+    <section class="main_page" style="display:block;">
+      <div class="background">
+        <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/pokemon-go-4k-2018_1541974159.jpg" class="main_page__bg">
+      </div>
+      <div class="main_page_search">
+        <img src="" alt="">
+        <input type="search" placeholder="Pokemon name" class="filter">
+      </div>
+      <div class="main_page_sign">
+        <p class="main_page_sub">Go! Download now</p>
+        <ul class="main_page_download">
+          <li><a href="https://apps.apple.com/vc/app/pokémon-go/id1094591345" target="_blank"><img src="https://webstatic-sea.hoyoverse.com/upload/event/2020/12/14/6ff53bc5d797e9efc2ac7b2b602c267a_8295237617862628623.png" alt="key"></a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" target="_blank"><img src="https://webstatic-sea.hoyoverse.com/upload/event/2020/12/14/396b8eb0d0d2f27aadb476e0b62d0926_8878641138830187947.png" alt="key"></a></li>
+        </ul>
+      </div>
+      <img src="https://images.squarespace-cdn.com/content/v1/5a550024f14aa10bbe7c9965/1607468922712-295RA5MCPV2JNF2OD8Z0/image-asset.png" class="logo_company">
+    </section>
+    <!-- Type page -->
+    <section id="PokeType" style="display:none">
+      <ul class="typebtn">
+        <li><a class="type" id="water"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg/2048px-Pok%C3%A9mon_Water_Type_Icon.svg.png" alt=""><p>Water</p></a></li>
+        <li><a class="type" id="fire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg/768px-Pok%C3%A9mon_Fire_Type_Icon.svg.png" alt=""><p>Fire</p></a></li> </li>
+        <li><a class="type" id="poison"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg/1024px-Pok%C3%A9mon_Poison_Type_Icon.svg.png" alt=""><p>Poison</p></a></li>
+        <li><a class="type" id="normal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pok%C3%A9mon_Normal_Type_Icon.svg/768px-Pok%C3%A9mon_Normal_Type_Icon.svg.png" alt=""><p>vNormal</p></a></li>
+        <li><a class="type" id="fighting"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Pok%C3%A9mon_Fighting_Type_Icon.svg/2048px-Pok%C3%A9mon_Fighting_Type_Icon.svg.png" alt=""><p>Fighting</p></a></li>
+        <li><a class="type" id="flying"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pok%C3%A9mon_Flying_Type_Icon.svg/2048px-Pok%C3%A9mon_Flying_Type_Icon.svg.png" alt=""><p>Flying</p></a></li>
+        <li><a class="type" id="grass"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg/768px-Pok%C3%A9mon_Grass_Type_Icon.svg.png" alt=""><p>Grass</p></a></li>
+        <li><a class="type" id="electric"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/768px-Pok%C3%A9mon_Electric_Type_Icon.svg.png" alt=""><p>Electric</p></a></li>
+        <li><a class="type" id="ground"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg/2048px-Pok%C3%A9mon_Ground_Type_Icon.svg.png" alt=""><p>Ground</p></a></li>
+        <li><a class="type" id="psychic"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pok%C3%A9mon_Psychic_Type_Icon.svg/1024px-Pok%C3%A9mon_Psychic_Type_Icon.svg.png" alt=""><p>Psychic</p></a></li>
+        <li><a class="type" id="rock"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Pok%C3%A9mon_Rock_Type_Icon.svg/1024px-Pok%C3%A9mon_Rock_Type_Icon.svg.png" alt=""><p>Rock</p></a</li>
+        <li><a class="type" id="ice"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pok%C3%A9mon_Ice_Type_Icon.svg/768px-Pok%C3%A9mon_Ice_Type_Icon.svg.png" alt=""><p>Ice</p></a></li>
+        <li><a class="type" id="bug"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Pok%C3%A9mon_Bug_Type_Icon.svg/240px-Pok%C3%A9mon_Bug_Type_Icon.svg.png" alt=""><p>Bug</p></a></li>
+        <li><a class="type" id="dragon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pok%C3%A9mon_Dragon_Type_Icon.svg/1200px-Pok%C3%A9mon_Dragon_Type_Icon.svg.png" alt=""><p>Dragon</p></a></li>
+        <li><a class="type" id="ghost"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pok%C3%A9mon_Ghost_Type_Icon.svg/1024px-Pok%C3%A9mon_Ghost_Type_Icon.svg.png" alt=""><p>Ghost</p></a></li>
+        <li><a class="type" id="dark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg/768px-Pok%C3%A9mon_Dark_Type_Icon.svg.png" alt=""><p>Dark</p></a></li>
+        <li><a class="type" id="steel"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Pok%C3%A9mon_Steel_Type_Icon.svg/1024px-Pok%C3%A9mon_Steel_Type_Icon.svg.png" alt=""><p>Steel</p></a></li>
+        <li><a class="type" id="fairy"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pok%C3%A9mon_Fairy_Type_Icon.svg/1024px-Pok%C3%A9mon_Fairy_Type_Icon.svg.png" alt=""><p>Fairy</p></a></li>
+      </ul>
+      <div id="typebg">
+      </div>
+    </section>
+    <!-- Egg page -->
+    <section id="PokeEgg" style="display:none">
+      <ul class="eggbtn">
+        <li><a class="egg" id="2 km"><img src="https://i.postimg.cc/Dw3KdMYP/pokemon-go-egg-png-3.png" alt=""><p>2 km</p></a></li>
+        <li><a class="egg" id="5 km"><img src="https://www.pngkit.com/png/full/769-7697923_808-x-989-25-pokemon-go-egg-5k.png" alt=""><p>5 km</p></p></a></li>
+        <li><a class="egg" id="7 km"><img src="https://pokemon-go.name/wp-content/uploads/2020/08/pokemon-go-egg-7-km.png" alt=""><p>7 km</p></a></li>
+        <li><a class="egg" id="10 km"><img src="https://www.pinclipart.com/picdir/big/89-892298_pokemon-egg-pokemon-go-egg-png-clipart.png" alt=""><p>10 km</p></a></li>
+        <li><a class="egg" id="not in eggs"><img src="https://static.wikia.nocookie.net/pokemongo/images/4/4c/Evolution_Items.png/revision/latest/scale-to-width-down/250?cb=20171114103736" alt=""><p>Not in eggs</p></a></li>
+      </ul>
+    </section>
+    <!-- Region page -->
+    <section id="PokeRegion" style="display:none">
+      <ul class="regionList">
+        <li class="regionList-item">
+          <div class="regionList-bg" id="rkanto">
+          </div>
+          <a href="" class="region" id="kanto"><p>Kanto</p></a>
+          <div class="regionList-char" id="rkantouno">
+          </div>
+        </li>
+        <li class="regionList-item">
+          <div class="regionList-bg" id="rjohto">
+          </div>
+          <a href="" class="region" id="johto"><p>Johto</p></a>
+          <div class="regionList-char" id="rjohtouno">
+          </div>
+        </li>
+        <li class="regionList-item regionList-item-disable regionList-item-soon">
+          <p>Soon</p>
+        </li>
+      </ul>
+    </section>
+    <div class="footer">
+    </div>
+  </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
