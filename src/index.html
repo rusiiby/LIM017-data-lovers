@@ -4,9 +4,64 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <section>
+      <div class="wave"></div>
+    </section>
+    <div>
+      <img class="pikachu" src="img/pikachu.png" alt="">
+      <img class="poblack" src="img/pokebolablack.png" alt="">
+      <img class="pokered" src="img/pokebolared.png" alt="">
+      <img class="bolblue" src="img/bolblue.png" alt="">
+      <img class="bolgrem" src="img/bolgrem.png" alt="">
+      <img class="logo" src="img/logo.png" alt="">
+      <img class="teamRocket" src="img/teamRocket.png" alt="">
+    </div>
+    <div class="container-filter" id="filter">
+      <h1>&#x2728; Pokemons Characters &#x2728;</h1>
+      <div id="searchWapper">
+        <input type="text"
+          type="text"
+          name="searchBar"
+          id="searchBar"
+          placeholder="search for a character"
+        />
+      </div>
+      <ul id="charactersList"> </ul>
+    </div>
+    <div class="container-section">
+      <div>
+        <div class="container" id="root">
+        </div>
+      </div>
+      <div class="container-section">
+        <div class="modal" id="modal-detalle">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>Visit pokemón regions</h1>
+          <select name="select-location" id="select-location">
+            <option value="-1">Select a place:</option>
+            <option value="36.4599356,139.6911096">kanto</option>
+            <option value="12.19602,-72.147218">jhoto</option>					
+          </select>
+          <div id="map" class="map"></div>
+        </div>
+      </div>
+    </div>
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   		crossorigin=""></script>  
     <script src="main.js" type="module"></script>
   </body>
 </html>
