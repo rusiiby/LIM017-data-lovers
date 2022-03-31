@@ -9,15 +9,23 @@
     crossorigin=""/>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <header>
-    <nav id="container-menu">
-      <ul>
-        <li><a id="home"><span class="icon-home"></span>Home</a> </li>
-        <li><a id="about"><span class="icon-hipster"></span>about</a></li>
-        
-      </ul>
-    </nav>
-  </header>
+  <div class="header">
+    <div class="header_logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pokémon_GO_logo.svg/1200px-Pokémon_GO_logo.svg.png" alt="logo">
+    </div>
+    <div class="header_options">
+      <div class="options_list">
+        <a href="#select-types" id="btype" class="options">By type</a>
+        <a href="#select-resistant" aria-current="page" class="options">By Resistant</a>
+        <a href="#select-weaknesses" class="options">By weaknesses</a>
+        <a href="#select-generation" class="options">By Generation</a>
+      </div>
+    </div>
+    <a href="https://pokemongolive.com/es/" class="official_page">
+      <div class="transition-img" style="background-image: url(https://i.ibb.co/M6hKjjv/Group-101-1.png);">
+      </div>
+    </a>
+  </div>
   <body>
     <section>
       <div class="wave"></div>
@@ -28,8 +36,22 @@
       <img class="pokered" src="img/pokebolared.png" alt="">
       <img class="bolblue" src="img/bolblue.png" alt="">
       <img class="bolgrem" src="img/bolgrem.png" alt="">
-      <img class="logo" src="img/logo.png" alt="">
+      <!-- <img class="logo" src="img/logo.png" alt=""> -->
       <img class="teamRocket" src="img/teamRocket.png" alt="">
+    </div>
+    <div class="main_page_sign">
+      <ul class="main_page_download">
+        <li><a href="https://apps.apple.com/vc/app/pokémon-go/id1094591345" target="_blank"><img src="https://webstatic-sea.hoyoverse.com/upload/event/2020/12/14/6ff53bc5d797e9efc2ac7b2b602c267a_8295237617862628623.png" alt="key"></a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" target="_blank"><img src="https://webstatic-sea.hoyoverse.com/upload/event/2020/12/14/396b8eb0d0d2f27aadb476e0b62d0926_8878641138830187947.png" alt="key"></a></li>
+      </ul>
+    </div>
+    <div class="fond">
+      <div>
+        <img class="slider2" src="img/slider2.png" alt="">
+      </div>
+      <div>
+        <img class="slider3" src="img/slider3.png" alt="">
+      </div>
     </div>
     <div class="container-filter" id="filter">
       <h1>&#x2728; Pokemons Characters &#x2728;</h1>
@@ -46,6 +68,11 @@
           <label for="sweaknesses">weaknesses</label>
           <select name="select-weaknesses" id="select-weaknesses"></select>
         </div>
+        <div>
+          <label for="sgeneration">generation</label>
+
+          <select name="select-generation" id="select-generation"></select>
+        </div>
       </div>
       <div id="searchWapper">
         <input type="text"
@@ -58,24 +85,23 @@
       
       <ul id="charactersList"> </ul>
     </div>
+    <div class="modal" id="modal-detalle">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body">
+
+        </div>
+      </div>
+    </div>
     <div class="container-section">
-      <div>
+      <div class="section-results">
         <div class="container" id="root">
         </div>
       </div>
-      <div class="container-section">
-        <div class="modal" id="modal-detalle">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-body">
-
-            </div>
-          </div>
-        </div>
-        <div>
+        
+        <div class="section-results">
           <div id="map" class="map"></div>
         </div>
-      </div>
     </div>
      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="

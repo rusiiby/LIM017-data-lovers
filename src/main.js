@@ -10,13 +10,14 @@ const modal = document.getElementById('modal-detalle');
 let typesPokemonSelect = [];
 let resistantPokemonSelect =[];
 let weaknessesPokemonSelect =[];
+let generationPokemonSelect = [];
 
 let dataPokemon = [];
 let pokemons = [];
 
 searchBar.addEventListener('keyup', function(e){
     const searchString = e.target.value;
-    console.log(searchString);
+    // console.log(searchString);
     const filteredPokemons = dataPokemon.filter(function(pokemon){
         return pokemon.name.includes(searchString);
     });
@@ -34,7 +35,7 @@ const loadPokemons = async () => {
         getPokemonTypes(dataPokemon);
         getPokemonResistant(dataPokemon);
         getPokemonWeaknesses(dataPokemon);
-        // getPokemonPopup(dataPokemon);
+        getPokemonGeneration(dataPokemon);
         let test;
         dataPokemon.forEach(function(el){
             let lat = Math.random() * 20.5;
@@ -54,6 +55,7 @@ const loadPokemons = async () => {
 
 function renderPokemon(pokemonsData){
     const hmtlString = pokemonsData.map(function(element,index){
+        
         return `
         <div id="${index}" class="pokemon-card ${element.type[0]}">
             <div class="card-image">
@@ -70,6 +72,7 @@ function renderPokemon(pokemonsData){
         </div>
         `
     }).join('');
+    console.log(hmtlString)
 
     rootContainer.innerHTML = hmtlString;
     document.querySelectorAll(".pokemon-card").forEach((pokeCard) => {
@@ -79,7 +82,7 @@ function renderPokemon(pokemonsData){
             // getPokemonPopup(pokemonsData);
         });
     }); 
-}
+} 
 
 function renderModal(pokemonsData,index){
     console.log(pokemonsData);
@@ -99,6 +102,8 @@ function renderModal(pokemonsData,index){
     }else{
         nextEV = null;
     }
+
+
     console.log(prevEvolution);
     const htmlModal=`
     <div class="${pokemonsData[index].type[0]}"style="width:575px ; height: 555px;"">
@@ -118,7 +123,6 @@ function renderModal(pokemonsData,index){
         <div> <h4>Weaknesses:</h4> ${pokemonsData[index].weaknesses}</div> 
         ${preEV !== null? '<div> <h4>Pre Evolution:</h4>'+preEV + '</div>' : '<div> <h4>Pre Evolution:</h4>no tiene</div>'}
         ${nextEV !== null? '<div> <h4>Next Evolution:</h4>'+nextEV + '</div>' : '<div> <h4>Next Evolution:</h4>no tiene</div>'}
-        
     </div>
     `;
     console.log(index)
@@ -157,23 +161,11 @@ function renderMaps(dataPokemons){
          marker.bindPopup(`<img src="${el.img}" alt=""> <h6>${el.name}</h6>
          `).openPopup();
     })
+    map = L.map('map', {
+        
+        scrollWheelZoom: false
+    });
 }
-//modal
-// let openPop = document.getElementById("popup");
-// function getPokemonPopup(pokemonsData){
-//     // console.log(pokemonsData)
-//     pokemonsData.forEach(function(el){
-//         openPop.addEventListener("click",function(){
-            
-//         })
-//         console.log(openPop)
-//         openPop.innerHTML += `
-//         <h1>${el.name}</h1>`
-//     })
-// }
-
-
-
 // select types
 
 let selectTypes = document.getElementById('select-types');
@@ -219,7 +211,7 @@ function renderTypesSelect(arrTypes){
     selectTypes.innerHTML = hmtlString;
 }
 
-// selct for geneation
+// selct for resistant
 
 let selectResistant = document.getElementById('select-resistant');
 // console.log(selectResistant);
@@ -306,3 +298,52 @@ function renderWeaknessesSelect(arrWeaknesses){
 
     selectWeaknesses.innerHTML = hmtlString;
 }
+// filtrando por generacion
+let selectGeneration = document.getElementById('select-generation');
+
+selectGeneration.addEventListener('change', function(e){
+    const searchString = e.target.value;
+    // console.log(searchString);
+    const filteredPokemons = dataPokemon.filter(function(pokemons){
+        return pokemons.generation.name.includes(searchString);
+    });
+    // console.log(filteredPokemons);
+    renderPokemon(filteredPokemons);
+    // renderMaps(filteredPokemons);
+})
+
+function getPokemonGeneration(dataPokemon){
+console.log(dataPokemon);
+   dataPokemon.forEach(function(element){
+       console.log(element.generation.name)
+    generationPokemonSelect.push(element.generation.name);
+   })
+
+   console.log(generationPokemonSelect)
+   //spread operator
+   
+   const dataArrGen = new Set(generationPokemonSelect);
+   const generationPokemon = [...dataArrGen];
+   console.log(generationPokemon)
+   renderGenerationSelect(generationPokemon);
+}
+
+
+function renderGenerationSelect(arrGeneration){
+    console.log(arrGeneration);
+    const hmtlString = arrGeneration.map(function(element,index){
+        return `
+        <option value='${element}'>${element}</option>
+        `
+    }).join('');
+
+    selectGeneration.innerHTML = hmtlString;
+}
+//Main page to type page
+const ftype= document.getElementById("btype");
+ftype.addEventListener("click", () =>{
+const main= document.querySelector(".main_page");
+const type= document.querySelector(".Poketype");
+main.style.display="none";
+type.style.display="block";
+});
