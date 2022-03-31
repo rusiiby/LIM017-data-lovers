@@ -1,0 +1,406 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background:linear-gradient(79.9deg, #FFCB2A -12.32%, #FE602E 113.99%);
+}
+.logo{
+    position: absolute;
+    left: 1.86%;
+    right: 35.48%;
+    bottom: 30.4%;
+    top: 1%;
+    max-width: 132px; 
+    background-position: bottom;
+}
+.pikachu{
+    position: absolute;
+left: 60.86%;
+right: 60.48%;
+top: 2%;
+bottom: 63.4%;
+max-width: 350px;
+}
+.poblack{
+    position: absolute;
+    left: 50.86%;
+    right: 30.48%;
+    top: 20%;
+    bottom: 60.4%;
+    max-width: 102px;
+    }
+.pokered{
+    position: absolute;
+    left: 87.86%;
+    right: 50.48%;
+    bottom: 30.4%;
+    top: 25%;
+    max-width: 150px;  
+    background-position: bottom;
+}
+.teamRocket{
+    position: absolute;
+    left: 3.86%;
+    right: 35.48%;
+    bottom: 30.4%;
+    top: 13%;
+    max-width: 312px;  
+    background-position: bottom;
+}
+.bolblue{
+    position: absolute;
+    left: 70%;
+    right: 30.48%;
+    top: 44%;
+    bottom: 60.4%;
+    max-width: 212px;
+}
+.bolgrem{
+    position: absolute;
+    left: 35.86%;
+    right: 30.48%;
+    top: 38%;
+    bottom: 60.4%;
+    max-width: 80px;
+}
+section .wave{
+    position:absolute ;
+    width: 100%;
+    height: 100%;
+    /* background: url(slider1.png); */
+    background-size:100% 50% ;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image:  url(slider1.png);
+    top: 10px;
+}
+
+header {
+    width:100%;
+    font-family: roboto, sans-serif;
+}
+
+header nav {
+    background:linear-gradient(79.9deg, #FFCB2A -12.32%, #FE602E 113.99%);
+    z-index: 1000;
+    max-width: 100%;
+    margin-top: -5px;
+    display: flex;
+    justify-content:right;  
+    
+}
+header:hover{
+    background: #000;
+}
+
+ header ul li {
+    display: inline-block;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #136fb6;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    position: relative;
+}
+/* estilos de select */
+.container-select{
+    display: flex;
+    justify-content: center;
+}
+label {
+    color: #0A3D63;
+    font-size: 15px;
+    margin: 35px 15px auto;
+}
+#select-types{
+
+        width: 150px;
+        color: #fff;
+        padding: 5px 15px;
+        margin-top: 29px;
+        font-size: 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 1px solid #0A3D63;
+        background: #0A3D63;
+}
+#select-resistant{
+
+    width: 150px;
+    color: #fff;
+    padding: 5px 15px;
+    margin-top: 29px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #0A3D63;
+    background: #0A3D63;
+}
+#select-weaknesses{
+    width: 150px;
+    color: #fff;
+    padding: 5px 15px;
+    margin-top: 29px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #0A3D63;
+    background: #0A3D63;
+}
+.slider2{
+   position: absolute;
+width: 100%;
+height: 100%;
+left: 0%;
+top: 120%;
+max-width: 105%;
+}
+.slider3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 250%;
+    max-width: 105%;
+ }
+
+/* .flex-container {
+  display: flex;
+  background-color: grey;
+} */
+.container{
+    background-color: white;
+    height: auto;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+}
+.container img {
+    /* width: 100px;
+    height: 100px; */
+}
+.pokemon-card{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 6px;
+    width: 33%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card-info{
+    padding: 0px;
+}
+h3{
+    color: white;
+}
+.grass{
+    border: green 2px solid;
+}
+.grass .card-info{
+    background: green;
+}
+.fire{
+    border: orange 2px solid;
+}
+.fire .card-info{
+    background: orange;
+}
+.poison{
+    border: purple 2px solid;
+}
+.poison .card-info{
+    background: purple;
+}
+.water{
+    border: rgb(68, 170, 233) 2px solid;
+}
+.water .card-info{
+    background: rgb(68, 170, 233);
+}
+.bug{
+    border: rgb(116, 235, 116) 2px solid; 
+}
+.bug .card-info{
+    background: rgb(116, 235, 116);
+}
+.normal{
+    border:  rgb(104, 69, 69) 2px solid;
+}
+.normal .card-info{
+    background: rgb(104, 69, 69);
+}
+.electric{
+    border:yellow 2px solid;
+}
+.electric .card-info{
+    background: yellow;
+}
+.psychic{
+    border:rgb(157, 138, 228) 2px solid;
+}
+.psychic .card-info{
+    background: rgb(157, 138, 228);
+}
+.fighting{
+    border: salmon 2px solid;
+}
+.fighting .card-info{
+    background: salmon;
+}
+.ground{
+    border: rgb(235, 83, 83) 2px solid;
+}
+.ground .card-info{
+    background: rgb(235, 83, 83);
+}
+.rock{
+    border: rgb(117, 116, 116) 2px solid;
+}
+.rock .card-info{
+    background: rgb(117, 116, 116);
+}
+.ghost{
+    border: rgb(26, 28, 160) 2px solid;
+}
+.ghost .card-info{
+    background: rgb(26, 28, 160);
+}
+.dragon{
+    border:rgb(25, 116, 173) 2px solid ;
+}
+.dragon .card-info{
+    background: rgb(25, 116, 173);
+}
+.fairy{
+    border: rgb(228, 15, 43) 2px solid ;
+}
+.fairy .card-info{
+    background: rgb(228, 15, 43);
+}
+.dark{
+    border:  rgb(34, 33, 33) 2px solid ;
+}
+.dark .card-info{
+    background: rgb(34, 33, 33);
+}
+.steel{
+    border: rgb(71, 70, 70) 2px solid;
+}
+.steel .card-info{
+    background: rgb(71, 70, 70);
+}
+.ice{
+    border:  rgb(153, 228, 241) 2px solid;
+}
+.ice .card-info{
+    background:  rgb(153, 228, 241);
+}
+/* ------------------Aqui van los estilos del popup----------- */
+#map {
+	height: 100%;
+	width: 100vh;
+    /* margin: 10px; */
+    /* position: fixed; */
+ }
+ .map{
+     height: 100px;
+     width: 100px;
+ }
+.container-section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+} 
+/* estilos para la busqueda */
+
+#searchBar {
+    width: 50%;
+    height: 32px;
+    border-radius: 3px;
+    border: 5px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 50px;
+    
+} 
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+.container-filter{
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #413058e3;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid rgb(12, 10, 10);
+    width: 36.5%;
+    display: flex;
+    height: 70%;
+    justify-content: center;
+
+    
+  }
+  .modal-content h4{
+      background-color:#cdcae0;
+      text-align:justify
+  }
+  #modal-body{
+      height: 100%;
+      width: 94%;
+      background:white;
+      justify-content: center;
+      text-align: center;
+
+  }
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

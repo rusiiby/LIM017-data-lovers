@@ -9,6 +9,15 @@
     crossorigin=""/>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+  <header>
+    <nav id="container-menu">
+      <ul>
+        <li><a id="home"><span class="icon-home"></span>Home</a> </li>
+        <li><a id="about"><span class="icon-hipster"></span>about</a></li>
+        
+      </ul>
+    </nav>
+  </header>
   <body>
     <section>
       <div class="wave"></div>
@@ -24,6 +33,20 @@
     </div>
     <div class="container-filter" id="filter">
       <h1>&#x2728; Pokemons Characters &#x2728;</h1>
+      <div class="container-select">
+        <div class="t">
+          <label for="stypes">Types</label>
+            <select name="select-types" id="select-types"> </select>
+        </div>
+        <div>
+          <label for="sresistant">Resistant</label>
+          <select name="select-resistant" id="select-resistant"></select>
+        </div>
+        <div>
+          <label for="sweaknesses">weaknesses</label>
+          <select name="select-weaknesses" id="select-weaknesses"></select>
+        </div>
+      </div>
       <div id="searchWapper">
         <input type="text"
           type="text"
@@ -32,6 +55,7 @@
           placeholder="search for a character"
         />
       </div>
+      
       <ul id="charactersList"> </ul>
     </div>
     <div class="container-section">
@@ -40,6 +64,9 @@
         </div>
       </div>
       <div class="container-section">
+        <div class="pop_up" id="popup">
+          <h1>hola</h1>
+        </div>
         <div class="modal" id="modal-detalle">
           <div class="modal-content">
             <span class="close">&times;</span>
