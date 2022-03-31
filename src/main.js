@@ -83,22 +83,42 @@ function renderPokemon(pokemonsData){
 
 function renderModal(pokemonsData,index){
     console.log(pokemonsData);
+    let type = pokemonsData[index].type.toString();
+    let preEV;
+    let nextEV;
+    let prevEvolution = pokemonsData[index].evolution['prev-evolution'];
+    prevEvolution ? preEV = prevEvolution[0]['name'] : preEV = null;
+    // if(prevEvolution){
+    //     preEV = prevEvolution[0]['name'];
+    // }else{
+    //     preEV = 'No tiene';
+    // }
+    let nextEvolution = pokemonsData[index].evolution['next-evolution'];
+    if(nextEvolution){
+        nextEV = nextEvolution[0]['name'];
+    }else{
+        nextEV = null;
+    }
+    console.log(prevEvolution);
     const htmlModal=`
-    <div class="${pokemonsData[index].type[0]}"style="width:460px ; height: 480px;"">
+    <div class="${pokemonsData[index].type[0]}"style="width:575px ; height: 555px;"">
         <div class="card-image">
             <img src="${pokemonsData[index].img} "style="width:300px ; height: 200px;" alt="">
         </div>
         <div class="card-info">
-            <h1>Name => ${pokemonsData[index].name}</h1>  
+            <h2>Name => ${pokemonsData[index].name}</h2>  
             <div><h3>Numero : ${pokemonsData[index].num}</h3></div>
         </div>
         <div>
         <div> <h4>About:</h4> ${pokemonsData[index].about}</div> 
         </div>
-        <div> <h4>  Type: </h4>${pokemonsData[index].type[0]}</div>
+        <div> <h4>  Type: </h4>${type}</div>
         <div> <h4>Egg:</h4> ${pokemonsData[index].egg}</div> 
         <div> <h4>Resistant:</h4> ${pokemonsData[index].resistant}</div> 
         <div> <h4>Weaknesses:</h4> ${pokemonsData[index].weaknesses}</div> 
+        ${preEV !== null? '<div> <h4>Pre Evolution:</h4>'+preEV + '</div>' : '<div> <h4>Pre Evolution:</h4>no tiene</div>'}
+        ${nextEV !== null? '<div> <h4>Next Evolution:</h4>'+nextEV + '</div>' : '<div> <h4>Next Evolution:</h4>no tiene</div>'}
+        
     </div>
     `;
     console.log(index)
@@ -137,10 +157,6 @@ function renderMaps(dataPokemons){
          marker.bindPopup(`<img src="${el.img}" alt=""> <h6>${el.name}</h6>
          `).openPopup();
     })
-    document.getElementById('select-location').addEventListener('change',function(e){
-        let coords = e.target.value.split(",");
-        map.flyTo(coords,13);
-      })
 }
 //modal
 // let openPop = document.getElementById("popup");
